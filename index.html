@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <title>Page Title</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="stylesheet" href="https://unpkg.com/leaflet@1.4.0/dist/leaflet.css" />
+
+    <!--<link rel="stylesheet" type="text/css" media="screen" href="main.css">
+    <script src="main.js"></script>-->
+    <style>
+    #mapContainer{
+        position: absolute;
+        top: 0;
+        right: 0;
+        left: 0;
+        bottom: 0;
+    }
+    </style>
+    <script src="mian.js"></script>
+</head>
+<body>
+    
+        <div id="mapContainer"></div>        
+
+        <script src="https://unpkg.com/leaflet@1.4.0/dist/leaflet.js"></script>
+        <script>
+            //*********************************************
+
+  
+
+
+
+            //**********************************************
+        var map = L.map('mapContainer').setView([3.5289336,-76.2966477 ], 15);
+
+        L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png', {
+    attribution: '&copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors' }).addTo(map);
+
+   var marcas=  L.marker([3.5319457,-76.3168139 ]).addTo(map)
+    .bindPopup('<img src="22.png" width="100"/>Aca estoy <a href=\"https://scharss.github.io/" target=\"_blank\" title=\"Opens in a new window\">Ir aquí</a>'),
+    
+
+
+     marcas2=  L.marker([3.52112,-76.299904 ]).addTo(map)
+    .bindPopup('<img src="22.png" width="100"/>Responsable: Luis Palmira es un municipio colombiano del departamento del Valle del Cauca en Colombia; localizado en la región sur del departamento. Es conocido como La Villa de las Palmas <a href=\"https://scharss.github.io/" target=\"_blank\" title=\"Opens in a new window\">Ir aquí</a>');
+   
+    marcas4=  L.marker([3.53112,-76.298934 ]).addTo(map)
+    .bindPopup('<img src="22.png" width="100"/>Responsable: Juan Palmira es un municipio colombiano del departamento del Valle del Cauca en Colombia; localizado en la región sur del departamento. Es conocido como La Villa de las Palmas <a href=\"https://scharss.github.io/" target=\"_blank\" title=\"Opens in a new window\">Ir aquí</a>');
+   
+    marcas5=  L.marker([3.5335382,-76.3026989 ]).addTo(map)
+    .bindPopup('<img src="22.png" width="100"/>Responsable: Fernanda Palmira es un municipio colombiano del departamento del Valle del Cauca en Colombia; localizado en la región sur del departamento. Es conocido como La Villa de las Palmas<a href=\"https://scharss.github.io/" target=\"_blank\" title=\"Opens in a new window\">Ir aquí</a>');
+   
+    
+    var cities = L.layerGroup([marcas, marcas2,marcas4, marcas5]);
+
+    var marcas3=  L.marker([3.52212,-76.288904 ]).addTo(map)
+    .bindPopup('<img src="22.png" width="100"/>Responsable: Pedro Palmira es un municipio colombiano del departamento del Valle del Cauca en Colombia; localizado en la región sur del departamento. Es conocido como La Villa de las Palmas<a href=\"https://scharss.github.io/" target=\"_blank\" title=\"Opens in a new window\">Ir aquí</a>'),
+    
+
+    marcas7=  L.marker([3.52332,-76.296904 ]).addTo(map)
+    .bindPopup('<img src="22.png" width="100"/>Responsable: María Palmira es un municipio colombiano del departamento del Valle del Cauca en Colombia; localizado en la región sur del departamento. Es conocido como La Villa de las Palmas <a href=\"https://scharss.github.io/" target=\"_blank\" title=\"Opens in a new window\">Ir aquí</a>'),
+   
+    marcas8=  L.marker([3.52823844,-76.2984856 ]).addTo(map)
+    .bindPopup('<img src="22.png" width="100"/>Responsable: Juan Palmira es un municipio colombiano del departamento del Valle del Cauca en Colombia; localizado en la región sur del departamento. Es conocido como La Villa de las Palmas<a href=\"https://scharss.github.io/" target=\"_blank\" title=\"Opens in a new window\">Ir aquí</a>');
+    var cities2 = L.layerGroup([marcas3, marcas7,marcas8]);
+    
+  var polygon = L.polygon([
+    [3.52823844,-76.2984856],
+    [3.53332,-76.296904],
+    [3.5212,-76.288904]],{
+    color: 'red',
+    fillColor: '#f03',
+    fillOpacity: 0.5,
+    
+}).addTo(map).bindPopup('<img src="22.png" width="100"/>Competencia Palmira es un municipio colombiano del departamento del Valle del Cauca en Colombia; localizado en la región sur del departamento. Es conocido como La Villa de las Palmas<a href=\"https://scharss.github.io/" target=\"_blank\" title=\"Opens in a new window\">Ir aquí</a>');
+
+   
+
+    var overlayMaps = {
+    "Grupo Zona1": cities,
+    
+    "Grupo Zona2": cities2,
+    "Competencia": polygon
+   
+    
+};
+
+
+
+L.control.layers(overlayMaps).addTo(map);
+
+     </script>
+
+
+
+</body>
+</html>
